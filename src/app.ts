@@ -1,7 +1,9 @@
+import path from "node:path";
 import express, { type Express, type Request, type Response } from 'express';
+const publicPath = path.join(import.meta.dirname, "..", "public");
 
 const app: Express = express();
-app.use("/static", express.static("public"));
+app.use("/static", express.static(publicPath))
 const port = 3000;
 
 app.get("/", (req: Request, res: Response) => {
