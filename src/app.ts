@@ -1,8 +1,7 @@
 import express, { type Express, type Request, type Response } from 'express';
 
 const app: Express = express();
-app.use(express.static("public"));
-app.use(express.static("files"));
+app.use("/static", express.static("public"));
 const port = 3000;
 
 app.get("/", (req: Request, res: Response) => {
